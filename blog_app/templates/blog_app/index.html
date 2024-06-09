@@ -5,26 +5,14 @@
 {% block css_files %}
 <link rel="stylesheet" href="{% static "blog_app/index.css" %}">
 <link rel="stylesheet" href="{% static "blog_app/includes/header.css" %}">
+<link rel="stylesheet" href="{% static "blog_app/includes/post.css" %}">
 {% endblock css_files %}
 
 {% block page_content %}
     {% include "blog_app/includes/header.html" %}
     <main>
         <section id="posts">
-            {% for item in all_posts %}
-                <div class="post">
-                    <img src="{{item.image.url}}" alt="">
-                    <div class="overlay">
-                        <h2><a href="{% url "blog-detail" item.post_id %}">{{item.title}}</a></h2>
-                        <p>{{item.excerpt}}</p>
-                        <div class="post-tags">
-                            {% for tags in item.tag.all %}
-                                <p>{{tags.caption}}</p>
-                            {% endfor %}
-                        </div>
-                    </div>
-                </div>
-            {% endfor %}
+                {% include "blog_app/includes/post.html" %}
         </section>
         {% if not request.user.is_authenticated %}
             <div id="sign-in-message">
