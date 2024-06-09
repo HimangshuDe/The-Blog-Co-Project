@@ -1,9 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 /* For header */
 header{
     display: flex;
     padding: 5px !important;
     justify-content: space-between;
     align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
 }
 
 header h1 a{
@@ -12,9 +19,9 @@ header h1 a{
     text-decoration: none;
 }
 
-header a{
+.header-group a{
     padding: 5px;
-    margin: 0 10px;
+    margin: 0 20px 0 5px;
     background: #003049;
     border-radius: 5px;
     text-decoration: none;

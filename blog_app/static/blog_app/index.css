@@ -6,6 +6,7 @@ html, body{
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
     background: #f0f8ff;
+    overflow-x: hidden;
 }
 
 /* Header Utility Class */
@@ -14,6 +15,10 @@ html, body{
     color: #fff;
     border-radius: 5px;
     padding: 3px;
+}
+
+.m-top-100{
+    margin-top: 100px;
 }
 
 /* Section Post */

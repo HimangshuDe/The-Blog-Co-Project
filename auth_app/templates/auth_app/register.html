@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_title %}
+Sign Up | The Blog Company
+{% endblock page_title %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static "auth_app/register.css" %}">
+<link rel="stylesheet" href="{% static "blog_app/includes/header.css" %}">
+{% endblock css_files %}
+
+{% block page_content %}
+
+<div class="bg-img">
+    <img src="{% static "auth_app/images/white-black-wooden-board.jpg" %}" alt="">
+</div>
+{% include "blog_app/includes/header.html" %}
+<div class="container">
+    <div class="form-wrap">
+        <h1>Sign Up</h1>
+        <form action="">
+            {% csrf_token %}
+            <div class="form-controls">
+                <input type="text" placeholder='First Name' id='id_first_name' name='first_name'>
+            </div>
+            <div class="form-controls">
+                <input type="text" placeholder='Last Name' id='id_last_name' name='last_name'>
+            </div>
+            <div class="form-controls">
+                <input type="email" placeholder='Email' id='id_email' name='email'>
+            </div>
+            <div class="form-controls">
+                <input type="password" placeholder='Password' id='id_password1' name='password1'>
+            </div>
+            <div class="form-controls">
+                <input type="password" placeholder='Retype Password' id='id_password2' name='password2'>
+            </div>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+</div>
+{% endblock page_content %}

@@ -9,7 +9,8 @@ def user_login(request):
     return HttpResponse('Login Page')
 
 def user_register(request):
-    return HttpResponse('Register Page')
+    # return HttpResponse('Register Page')
+    return render(request, 'auth_app/register.html')
 
 def user_logout(request):
     logout(request)
