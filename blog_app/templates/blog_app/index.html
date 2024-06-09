@@ -9,11 +9,13 @@
 {% block page_content %}
     <header>
         <h1><a href="{% url "index" %}">The <span class="bg-black">Blog</span> Company</a></h1>
-        {% if not request.user.is_authenticated %}
-            <a href="{% url 'login' %}">Sign In</a>
-        {% else %}
-            <a href="{% url "logout" %}">Sign Out</a>
-        {% endif %}
+        <div class="header-group">
+            {% if not request.user.is_authenticated %}
+                <a href="{% url 'login' %}">Sign In</a>
+            {% else %}
+                <p>Hello! The <span class="bg-black">{{request.user}}</span><a href="{% url "logout" %}">Sign Out</a></p>
+            {% endif %}
+        </div>
     </header>
     <main>
         <section id="posts">
