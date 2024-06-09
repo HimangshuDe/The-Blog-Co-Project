@@ -36,19 +36,23 @@ class UserModelAdmin(UserAdmin):
         )
     )
 
-    add_fieldsets = (
-        "New User Registration",
-        {
-            'classes':('wide',),
-            'fields':(
-                'email',
-                'password1',
-                'password2',
-                'is_active',
-                'is_staff',
-                'is_superuser',
-            )
-        }
+    add_fieldsets = (  # fieldsets for adding a new user from admin site.
+        (
+            None,
+            {
+                "classes": ("wide",),
+                "fields": (
+                    "first_name",
+                    "last_name",
+                    "email",
+                    "password1",
+                    "password2",
+                    "is_active",
+                    "is_staff",
+                    "is_superuser",
+                ),
+            },
+        ),
     )
 
     search_fields = ['email']
