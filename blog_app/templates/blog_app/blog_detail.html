@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{post.title}}</title>
+</head>
+<body>
+    <div class="post-heading">
+        <h1>{{post.title}}</h1>
+        <p>{{post.excerpt}}</p>
+        <p><i>By <strong>{{ post.creator }}</strong></i></p>
+        <div class="post-tags">
+            {% for tags in post.tag.all %}
+                <p>{{tags.caption}}</p>
+            {% endfor %}
+        </div>
+    </div>
+    <main>
+        <section id="post-details">
+            <div class="post-image">
+                <img src="{{post.image.url}}" alt="">
+            </div>
+            <div class="post-content">
+                <p>
+                    {{post.content}}
+                </p>
+            </div>
+        </section>
+        <div class="space"></div>
+        <section id="post-datetime">
+            <p>Updated At: <time>{{post.update_at}}</time></p>
+        </section>
+    </main>
+</body>
+</html>
