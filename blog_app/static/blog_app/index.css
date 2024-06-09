@@ -8,29 +8,6 @@ html, body{
     background: #f0f8ff;
 }
 
-/* For header */
-header{
-    display: flex;
-    padding: 5px;
-    justify-content: space-between;
-    align-items: center;
-}
-
-header h1 a{
-    background: none;
-    color: #000;
-    text-decoration: none;
-}
-
-header a{
-    padding: 5px;
-    margin: 0 10px;
-    background: #003049;
-    border-radius: 5px;
-    text-decoration: none;
-    color: #fff;
-}
-
 /* Header Utility Class */
 .bg-black{
     background: #000;

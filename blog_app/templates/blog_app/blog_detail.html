@@ -1,16 +1,20 @@
+{% extends "base.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{post.title}}</title>
-</head>
-<body>
+
+{% block page_title %}{{post.title}}{% endblock page_title %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static "blog_app/blog_detail.css" %}">
+<link rel="stylesheet" href="{% static "blog_app/includes/header.css" %}">
+{% endblock css_files %}
+
+{% block page_content %}
+    {% include "blog_app/includes/header.html" %}
+
     <div class="post-heading">
         <h1>{{post.title}}</h1>
-        <p>{{post.excerpt}}</p>
-        <p><i>By <strong>{{ post.creator }}</strong></i></p>
+        <p id='excerpt'>{{post.excerpt}}</p>
+        
         <div class="post-tags">
             {% for tags in post.tag.all %}
                 <p>{{tags.caption}}</p>
@@ -24,14 +28,14 @@
             </div>
             <div class="post-content">
                 <p>
-                    {{post.content}}
+                    {{post.content|linebreaksbr}}
                 </p>
             </div>
         </section>
         <div class="space"></div>
-        <section id="post-datetime">
+        <section id="post-metadata">
             <p>Updated At: <time>{{post.update_at}}</time></p>
+            <p id="author"><i>By <span class='bg-black'>{{ post.creator }}</span></i></p>
         </section>
     </main>
-</body>
-</html>
+{% endblock page_content %}
