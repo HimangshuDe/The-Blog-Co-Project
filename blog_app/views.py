@@ -2,17 +2,18 @@ from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required
 # from django.http import HttpResponse
 
-from blog_app.models import Post
+from blog_app.models import Post, Tag
 
 # Create your views here.
 
 def index(request):
     all_posts = Post.objects.all()
+    all_tags = Tag.objects.all()
     if not request.user.is_authenticated:
         all_posts = Post.objects.all()[:3]
         
     # return HttpResponse("Hello World",)
-    return render(request, 'blog_app/index.html', {'all_posts':all_posts})
+    return render(request, 'blog_app/index.html', {'all_posts':all_posts, 'all_tags':all_tags})
 
 
 # @login_required()

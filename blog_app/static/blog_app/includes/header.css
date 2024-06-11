@@ -11,6 +11,9 @@ header{
     top: 0;
     width: 100%;
     z-index: 1;
+    
+    opacity: 1;
+    background-color: #b6c9ff;
 }
 
 header h1 a{

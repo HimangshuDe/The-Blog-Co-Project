@@ -13,7 +13,34 @@
     <div class="m-top-100"></div>
     <main>
         <section id="posts">
-                {% include "blog_app/includes/post.html" %}
+            <div class="post">
+                {% for item in all_posts %}
+                    <div class="post-item">
+                        <div class="post-image">
+                            <img src="{{item.image.url}}" alt="">
+                        </div>
+                        <div class="post-data">
+                            <h2><a href="{% url "blog-detail" item.post_id %}">{{item.title}}</a></h2>
+                            <p>{{item.excerpt}}</p>
+                            <div class="post-tags">
+                                {% for tags in item.tag.all %}
+                                    <p>{{tags.caption}}</p>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <aside id='side-section'>
+                <div class="all-post-tags">
+                    <h3>Tags</h3>
+                    <ul>
+                        {% for item in all_tags %}
+                            <li class="tag">{{item}}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </aside>
         </section>
         {% if not request.user.is_authenticated %}
             <div id="sign-in-message">
@@ -21,5 +48,6 @@
             </div>
         {% endif %}
     </main>
+    
 
 {% endblock page_content %}

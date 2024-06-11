@@ -5,7 +5,7 @@ html, body{
     padding: 0;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
-    background: linear-gradient(45deg, #b6c9ff, #f0f8ff) no-repeat; center center/cover;
+    background: linear-gradient(-45deg, #b6c9ff, #f0f8ff) no-repeat center center/cover;
     object-fit: fill;
     overflow-x: hidden;
     height: 100vh;
@@ -27,11 +27,63 @@ html, body{
 section#posts{
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+    width: 100%;
+    justify-content: space-around;
 }
 
-/* Post Class */
+/* Post Item class */
+.post-item{
+    border-bottom: 1px solid;
+    margin: 10px;
+    display: flex;
+}
+
+.post-item .post-image{
+    height: 144px;
+    width: 220px;
+    margin: 10px;
+}
+
+.post-image img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.post-data{
+    margin: 10px;
+}
+
+.post-data p{
+    margin-bottom: 5px;
+}
+
+.post-data h2 a{
+    text-decoration: none;
+    color: #03045e;
+}
+
+.post-data h2 a:hover{
+    text-decoration: underline;
+    color: #03045e;
+}
+
+.post-data .post-tags{
+    display: flex;
+    justify-content: space-around;
+    width: 200px;
+}
+.post-data .post-tags p{
+    border: 1px solid #808888;
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 12px;
+}
+
+.post-item:hover .post-image img{
+    box-shadow: 0 10px 10px #000000a8;
+}
+
 
 /* Sign In Message */
 #sign-in-message{
@@ -49,4 +101,27 @@ section#posts{
     
 #sign-in-message p a{
     text-decoration: none;
+}
+
+/* aside tag */
+#side-section h3{
+    margin: 10px 0 0 10px;
+    padding: 5px;
+}
+
+#side-section ul{
+    list-style: none;
+    padding: 5px;
+    margin: 0px 10px 10px 10px;
+    padding-top: 0;
+}
+
+#side-section ul li{
+    margin: 5px;
+}
+
+.all-post-tags{
+    border: 1px solid #808888;
+    border-radius: 5px;
+    margin: 15px 5px;
 }
