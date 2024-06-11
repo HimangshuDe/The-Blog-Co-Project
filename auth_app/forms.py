@@ -32,5 +32,5 @@ class CustomUserChangeForm(UserChangeForm):
 
 
 class LoginForm(forms.Form):
-    email = forms.EmailField()
-    password = forms.CharField(widget=forms.PasswordInput)
+    email = forms.EmailField(widget=forms.TextInput({"placeholder":"Email"}))
+    password = forms.CharField(widget=forms.PasswordInput({"placeholder":"Password"}))

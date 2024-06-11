@@ -24,7 +24,7 @@ Sign Up | The Blog Company
         <h1>Sign Up</h1>
         <form action="{% url 'register' %}" method="POST">
             {% csrf_token %}
-            {% for items in forms %}
+            {% for items in form %}
                 <div class="form-controls">
                     {{items}}
                     {{items.errors}}
