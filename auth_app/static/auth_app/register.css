@@ -5,17 +5,22 @@ html, body{
     margin: 0;
     padding: 0;
     font-family: 'Montserrat', sans-serif;
-    overflow: hidden; 
+    overflow-x: hidden;
+    height: 100vh;
+    width: 100vw;
 }
 
-header{
-    background: rgba(255, 255, 255, 0.555);
+.bg-black{
+    background: #000;
+    color: #fff;
+    border-radius: 5px;
+    padding: 3px;
 }
 
 .bg-img{
     overflow: hidden;
-    height: 100%;
-    width: 100%;
+    height: auto;
+    width: auto;
 }
 
 .bg-img img{
@@ -27,22 +32,48 @@ header{
     object-fit: contain;
 }
 
+/* Container */
 .container{
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1;
     margin: 20px auto;    
-    padding: 20px;
+    padding: 10px;
     background: linear-gradient(90deg, #add4f7, #c7e3fc);
     border-radius: 15px;
+    width: 750px;
+    display: flex;
+    justify-content: space-evenly;
 }
-h1{
-    text-align: center;
+
+.container .header{
+    position: relative;
+    top: 100px;
+    left: 10px;
+    align-self: unset;
+    display: block;
+    height: fit-content;
+    width: 350px;
+    word-break: keep-all;
+}
+
+.header p{
+    line-height: 1.6em;
+}
+
+hr{
+    border: 1px solid #000;
+    height: 250px;
+    margin-top: 90px;
 }
 
 /* Form part */
+.form-wrap h1{
+    text-align: center;
+}
+
 form{
     margin: 30px;
 }
