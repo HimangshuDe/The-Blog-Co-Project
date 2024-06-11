@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+html, body{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden; 
+}
+
+header{
+    background: rgba(255, 255, 255, 0.555);
+}
+
+.bg-img{
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+.bg-img img{
+    background: no-repeat center center/cover;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+.container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    margin: 20px auto;    
+    padding: 20px;
+    background: linear-gradient(90deg, #add4f7, #c7e3fc);
+    border-radius: 15px;
+}
+h1{
+    text-align: center;
+}
+
+/* Form part */
+form{
+    margin: 30px;
+}
+
+.form-controls{
+    padding-right: 10px;
+    margin-top: 10px;
+}
+
+.form-controls input{
+    height: 28px;
+    border: 1px solid #d5faff;
+    outline: none;
+    border-radius: 10px;
+    color: #000;
+    padding-left: 5px;
+    background: #d5faff;
+    width: 100%;
+}
+
+.form-controls input:focus{
+    border: 1px solid #000;
+}
+
+.form-wrap button{
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+    padding: 5px;
+    background: transparent;
+    color: #000;
+    outline: none;
+    border: 1px solid #000;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+
+.form-wrap button:hover{
+    background: #d5faff;
+}
+
+#login-section p{
+    text-align: center;
+}
+
+#login-section span {
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+
+#login-section span a{
+    text-decoration: none;
+    color: #7f96d1;
+    border: 1px solid transparent;
+}
+
+#login-section span a:hover{
+    border: 1px solid #7f96d1;
+    border-radius: 5px;
+}

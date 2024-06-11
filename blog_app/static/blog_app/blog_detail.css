@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+html, body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    background:#f0f8ff;
+}
+
+/* Utility Class */
+.bg-black{
+    background: #000;
+    color: #fff;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+.clr{
+    clear: both;
+}
+
+/* Post Heading */
+.post-heading{
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.post-heading h1,
+.post-heading #excerpt
+{
+    align-self: center;
+}
+
+#excerpt{
+    font-size: 22px;
+}
+
+.post-content{
+    word-break: break-all;
+    line-break: anywhere;
+    padding: 15px;
+}
+
+.post-heading #author{
+    align-self: center;
+}
+
+/* Post-Tags */
+.post-tags{
+    display: flex;
+    align-self: center;
+}
+
+.post-tags p{
+    padding: 5px;
+    margin: 5px;
+    font-size: 14px;
+    border: 1px solid grey;
+    border-radius: 5px;
+}
+
+/* Post Image */
+.post-image{
+    width: 640px;
+    height: auto;
+}
+
+.post-image img{
+    width: 100%;
+    height: auto;
+    float: left;
+    margin: 10px;
+    box-shadow: 0 10px 30px #0000008c;
+    border-radius: 10px;
+}
+
+/* Post metadata */
+#post-metadata{
+    text-align: center;
+}
