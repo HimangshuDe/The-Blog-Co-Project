@@ -16,7 +16,8 @@ def user_register(request):
     if request.method == 'POST':
         form = CustomUserCreationForm(request.POST)
         if form.is_valid():
-            HttpResponseRedirect(reverse('login'))
+            print('validated')
+            return HttpResponseRedirect(reverse('login'))
     return render(request, 'auth_app/register.html', {'forms':form})
 
 def user_logout(request):
