@@ -32,5 +32,5 @@ class CustomUserChangeForm(UserChangeForm):
 
 
 class LoginForm(forms.Form):
-    email = forms.EmailField(widget=forms.TextInput({"placeholder":"Email"}))
-    password = forms.CharField(widget=forms.PasswordInput({"placeholder":"Password"}))
+    email = forms.EmailField(widget=forms.TextInput({"placeholder":"Email"}), error_messages={"required":"Email is required"})
+    password = forms.CharField(widget=forms.PasswordInput({"placeholder":"Password"}), error_messages={"required":"Can't login without a Password!"})

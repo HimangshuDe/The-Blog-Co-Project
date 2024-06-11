@@ -100,6 +100,16 @@ form{
     border: 1px solid #000;
 }
 
+.form-controls #error{
+    font-size: 14px;
+    color: #ff0000;
+    text-align: center;
+}
+
+.form-controls .errorlist{
+    color: #ff0000;
+}
+
 .form-controls #forgot-password{
     font-size: 12px;
 }

@@ -4,7 +4,7 @@
         {% if not request.user.is_authenticated %}
             <a href="{% url 'login' %}">Sign In</a>
         {% else %}
-            <p>Hello! The <span class="bg-black">{{request.user}}</span><a href="{% url "logout" %}">Sign Out</a></p>
+            <p>Hello! <a href="{% url "account" %}" id='username'>{{request.user}}</a><a href="{% url "logout" %}">Sign Out</a></p>
         {% endif %}
     </div>
 </header>

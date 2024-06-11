@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+html, body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: linear-gradient(45deg, #97b1f8, #b6c9ff , #f0f8ff) no-repeat center center/cover;
+    height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+/* Header */
+header{
+    margin: 5px 10px;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logout-delete{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logout-delete a{
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* Utility class */
+.btn{
+    padding: 5px;
+    border: 1px solid #003049;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+
+.btn:hover{
+    background: #003049;
+    color: #f0f8ff;
+}
+
+.red{
+    background: red;
+    border:1px solid red ;
+    color: #f0f8ff ;
+}
+
+.red:hover{
+    background: #b40000;
+    border: 1px solid #b40000;
+}
+
+
+/* Main Section */
+#basic-credentials,
+#important-dates{
+    margin: 5px 10px;
+}
+
+#important-dates{
+    margin-top: 15px;
+}
+
+.bg-black{
+    background: #000;
+    color: #fff;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+.credential-group{
+    background: #48a3b9;
+    border-radius: 5px;
+}
+
+.credential-group h3{
+    padding: 5px;
+    margin: 0;
+}
+
+.label-block{
+    width: 400px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.label-surr-box{
+    width: 120px;
+}
+
+.info-surr-box{
+    border: 1px solid #000;
+    border-radius: 5px;
+    padding: 5px;
+    margin-left: 10px;
+    width: 200px;
+}
+
+#password-group{
+    border: 1px solid #2196f3;
+    border-radius: 10px;
+    background: #2196f3;
+    color: #fff;
+    display: inline-block;
+}
+
+#password-group p{
+    padding: 3px;
+    margin: 5px;
+}
+
+#password-group a{
+    text-decoration: none;
+    font-weight: bold;
+    color: #fff;
+}
+
+#password-group a{
+    text-decoration: underline;
+}
