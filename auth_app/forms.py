@@ -9,7 +9,7 @@ from auth_app.models import UserModel
 # For adding a new user through admin site
 class CustomUserCreationForm(UserCreationForm):
     first_name = forms.CharField(required=True, widget=forms.TextInput({'placeholder':'First Name'}))
-    last_name = forms.CharField(required=True, widget=forms.TextInput({'placeholder':'First Name'}))
+    last_name = forms.CharField(required=True, widget=forms.TextInput({'placeholder':'Last Name'}))
     class Meta:
         model = UserModel
         fields = ["first_name", "last_name","email"]
