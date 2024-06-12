@@ -1,10 +1,10 @@
 from django.shortcuts import render
-from django.http import HttpResponsePermanentRedirect, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponsePermanentRedirect, HttpResponseRedirect
 from django.contrib.auth import logout, login, authenticate
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 
-from auth_app.forms import LoginForm, CustomUserCreationForm
+from auth_app.forms import CustomUserChangeForm, LoginForm, CustomUserCreationForm
 from auth_app.models import UserModel
 
 # Create your views here.
@@ -56,11 +56,32 @@ def accounts_view(request):
     # NOTE: work pending on changing passwords accounts page!
     # NOTE: work pending on updating informations of an user accounts page!
 
+@login_required()
+def update_info_view(request):
+    user_id = request.user.id
+    user = UserModel.objects.get(id=user_id)
+    form = CustomUserChangeForm(instance=user)
+    if request.method == 'POST':
+        form = CustomUserChangeForm(request.POST, instance=user)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('account'))
+        return render(request, 'auth_app/update.html',{"form":form})
+    return render(request, 'auth_app/update.html', {"form":form})
+
+
 def user_logout(request):
     logout(request)
     return HttpResponsePermanentRedirect(reverse('index'))
+
 
 def del_user(request):
     user_id = request.user.id
     UserModel.objects.get(id=user_id).delete()
     return HttpResponsePermanentRedirect(reverse('login'))
+
+
+
+
+# ::Note Section::
+# NOTE: #1 Changing of password feature is pending for implementation.

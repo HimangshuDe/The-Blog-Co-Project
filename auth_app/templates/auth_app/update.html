@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_title %}
+    Update Info
+{% endblock page_title %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "auth_app/update.css" %}">
+{% endblock css_files %}
+
+{% block page_content %}
+<main>
+    <section>
+        <div class="form-wrap">
+            <form action="{% url "update" %}" method="post">
+                {% csrf_token %}
+                <div class="form-controls">    
+                    {{form}}
+                    {{form.errors}}
+                    <input type="submit" value="Update">
+                </div>
+            </form>
+            <div class="info-box">
+                <p>To change Password, please visit accounts info page!</p>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock page_content %}
