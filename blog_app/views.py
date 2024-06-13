@@ -24,3 +24,8 @@ def blog_detail_view(request, id):
     return render(request, 'blog_app/blog_detail.html', {'post':post,},)
 
 
+# :: Note Section ::
+# NOTE #1: Add "Add blog" feature in the project
+# NOTE #2: Implement addition of new tags via "add blog" feature, whenever user enters a new tag in
+# the tag field if it exists then no change, if not, then a new tag will be created from 
+# the entered tag.
