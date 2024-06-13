@@ -59,6 +59,7 @@ form{
     background: transparent;
     align-self: center;
     padding: 5px;
+    cursor: pointer;
 }
 
 /* Info Box */
@@ -76,4 +77,8 @@ form{
     color: #fff;
     font-weight: bold;
     word-wrap: normal;
+}
+
+.info-box a{
+    color: #fff;
 }
