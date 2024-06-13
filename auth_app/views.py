@@ -1,7 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponsePermanentRedirect, HttpResponseRedirect
-from django.contrib.auth import logout, login, authenticate
-from django.urls import reverse
+from django.contrib.auth import logout, login, authenticate, update_session_auth_hash
+from django.contrib.auth.views import PasswordChangeView
+from django.contrib.auth.forms import PasswordChangeForm
+from django.urls import reverse, reverse_lazy
 from django.contrib.auth.decorators import login_required
 
 from auth_app.forms import CustomUserChangeForm, LoginForm, CustomUserCreationForm
@@ -53,8 +55,13 @@ def accounts_view(request):
     user = UserModel.objects.get(id=user_id)
     # print(user.date_joined)
     return render(request, "auth_app/accounts.html", {'user_data':user})
-    # NOTE: work pending on changing passwords accounts page!
-    # NOTE: work pending on updating informations of an user accounts page!
+
+
+class ChangePasswordView(PasswordChangeView):
+    form_class = PasswordChangeForm
+    template_name = 'auth_app/update_password.html'
+    success_url = reverse_lazy('account')
+    
 
 @login_required()
 def update_info_view(request):

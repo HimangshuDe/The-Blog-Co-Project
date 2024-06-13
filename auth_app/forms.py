@@ -1,6 +1,6 @@
 from typing import Any
 from django import forms
-from django.contrib.auth.forms import UserCreationForm, UserChangeForm, PasswordChangeForm
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 
 from auth_app.models import UserModel
 
@@ -47,10 +47,3 @@ class LoginForm(forms.Form):
     email = forms.EmailField(widget=forms.TextInput({"placeholder":"Email"}), error_messages={"required":"Email is required"})
     password = forms.CharField(widget=forms.PasswordInput({"placeholder":"Password"}), error_messages={"required":"Can't login without a Password!"})
 
-
-class ChangePasswordForm(PasswordChangeForm):
-    old_password = forms.CharField(label='Enter Old Password', widget=forms.PasswordInput(attrs={"placeholder":"Old Password"}),error_messages={"required":"This is required"})
-    
-    new_password1 = forms.CharField(label="Enter new password", widget=forms.PasswordInput(attrs={"placeholder":"New Password"}))
-
-    new_password2 = forms.CharField(label="Retype that", widget=forms.PasswordInput(attrs={"placeholder":"Confirm Password"}))
