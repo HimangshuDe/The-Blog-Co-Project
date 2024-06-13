@@ -88,7 +88,3 @@ def del_user(request):
     return HttpResponsePermanentRedirect(reverse('login'))
 
 
-
-
-# ::Note Section::
-# NOTE: #1 Changing of password feature is pending for implementation.
