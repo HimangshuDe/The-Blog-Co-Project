@@ -29,8 +29,7 @@ class CustomUserCreationForm(UserCreationForm):
 class CustomUserChangeForm(UserChangeForm):
     date_of_birth = forms.DateField(
         widget=forms.DateInput(
-        attrs={'placeholder':'DD-MM-YYYY', 'type':'date'},
-        format="DD-MM-YYY",
+        attrs={'placeholder':'MM-DD-YYYY', 'type':'date'},
     ))
     class Meta:
         model = UserModel
