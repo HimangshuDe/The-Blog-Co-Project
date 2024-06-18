@@ -22,13 +22,41 @@ header h1 a{
     text-decoration: none;
 }
 
+.header-group{
+    display: flex;
+    align-items: center;
+}
+
 .header-group a{
-    padding: 5px;
-    margin: 0 20px 0 5px;
-    background: #003049;
-    border-radius: 5px;
     text-decoration: none;
-    color: #fff;
+    margin: 5px;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+.header-group #add-post{
+    background: transparent;
+    border: 1px solid #003049;
+    color: #003049;
+    text-decoration: none;
+    order: 2;
+}
+
+.header-group #add-post:hover{
+    background: #003049;
+    color: #fafaef;
+}
+
+.header-group #logout{
+    background: transparent;
+    color: #003049;
+    border: 1px solid #003049;
+    order: 3;
+}
+
+.header-group #logout:hover{
+    background: #003049;
+    color: #fafaef;
 }
 
 /* Dependent Utility Class */
@@ -45,7 +73,6 @@ header h1 a{
     background: none;
     margin: 0;
     border: 1px solid #000;
-    border-radius: 5px;
 }
 
 #username:hover{

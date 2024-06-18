@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required
 # from django.http import HttpResponse
 
+from blog_app.forms import AddBlogPost
 from blog_app.models import Post, Tag
 
 # Create your views here.
@@ -24,6 +25,9 @@ def blog_detail_view(request, id):
     return render(request, 'blog_app/blog_detail.html', {'post':post,},)
 
 
+def create_blog(request):
+    form = AddBlogPost()
+    return render(request, "blog_app/add_blog_post.html", {'form':form})
 # :: Note Section ::
 # NOTE #1: Add "Add blog" feature in the project
 # NOTE #2: Implement addition of new tags via "add blog" feature, whenever user enters a new tag in

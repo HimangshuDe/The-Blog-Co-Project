@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_title %}
+Add Blog
+{% endblock page_title %}
+
+{% block css_files %}
+
+{% endblock css_files %}
+
+{% block page_content %}
+<main>
+    <section id="form-section">
+        <div class="form-wrap">
+            <form action="{% url "add-blog" %}" method="post">
+                {{form}}
+                {{form.errors}}
+                <input type="submit" value="Create">
+            </form>
+        </div>
+    </section>
+</main>
+{% endblock page_content %}
