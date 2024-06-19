@@ -2,7 +2,7 @@
     <h1><a href="{% url "index" %}">The <span class="bg-black">Blog</span> Company</a></h1>
     <div class="header-group">
         {% if not request.user.is_authenticated %}
-            <a href="{% url 'login' %}">Sign In</a>
+            <a href="{% url 'login' %}" id="login">Sign In</a>
         {% else %}
             <p>Hello! <a href="{% url "account" %}" id='username'>{{request.user}}</a></p>
             <a href="{% url "logout" %}" id='logout'>Check Out</a>

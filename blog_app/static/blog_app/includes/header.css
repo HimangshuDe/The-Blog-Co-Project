@@ -34,6 +34,19 @@ header h1 a{
     border-radius: 10px;
 }
 
+.header-group #login{
+    background: transparent;
+    color: #003049;
+    border: 1px solid #003049;
+    order: 3;
+    margin-right: 15px;
+}
+
+.header-group #login:hover{
+    background: #003049;
+    color: #fafaef; 
+}
+
 .header-group #add-post{
     background: transparent;
     border: 1px solid #003049;
