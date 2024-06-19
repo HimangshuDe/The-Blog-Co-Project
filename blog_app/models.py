@@ -8,8 +8,8 @@ from auth_app.models import UserModel
 
 class Post(models.Model):
     post_id = models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True)
-    title = models.CharField(verbose_name='Post Title', max_length=255)
-    excerpt = models.CharField('Short lines', max_length=300)
+    title = models.CharField(max_length=255)
+    excerpt = models.CharField(max_length=300)
     content = models.TextField(verbose_name='Post Content', validators=[MinLengthValidator(10)])
     image = models.ImageField(upload_to='images/')
     created_at = models.DateTimeField(auto_now_add=True)

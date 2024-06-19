@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  border: 1px solid;
+  border-radius: 15px;
+}
+
+/* Form styling */
+.form-wrap h1 {
+  text-align: center;
+  font-size: 30px;
+}
+
+.form-wrap form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+
+.form-control {
+  padding-right: 10px;
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.form-control label {
+  display: none;
+}
+
+.form-control label#snap {
+  display: contents;
+}
+
+.form-control label#tags {
+  display: contents;
+}
+
+.form-control input[type="text"] {
+  border: none;
+  border-bottom: 1px solid #c2c2c2;
+  font-family: inherit;
+}
+
+.form-control input[type="text"]:focus {
+  outline: none;
+  border-bottom: 1px solid #000;
+}
+
+.form-control input[id="id_title"] {
+  font-size: 22px;
+  width: 85%;
+}
+
+.form-control input[id="id_excerpt"] {
+  font-size: 18px;
+  width: 100%;
+}
+
+.form-control textarea {
+  border: none;
+  border-bottom: 1px solid #c2c2c2;
+  border-left: 1px solid transparent;
+  resize: vertical;
+  height: 80px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+.form-control textarea:focus {
+  outline: none;
+  border-bottom: 1px solid #000;
+  border-left: 1px solid #000;
+}
+
+/* Submit */
+.form-control input[type="submit"] {
+  font-family: "Montserrrat", sans-serif;
+  width: 100%;
+  padding: 5px;
+  background: transparent;
+  outline: none;
+  border: 1px solid;
+  border-radius: 5px;
+  height: fit-content;
+  cursor: pointer;
+}
