@@ -1,6 +1,6 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from django.http import HttpResponse, HttpResponsePermanentRedirect, HttpResponseRedirect
-from django.contrib.auth import logout, login, authenticate, update_session_auth_hash
+from django.contrib.auth import logout, login, authenticate
 from django.contrib.auth.views import PasswordChangeView
 from django.contrib.auth.forms import PasswordChangeForm
 from django.urls import reverse, reverse_lazy
