@@ -1,3 +1,4 @@
+import re
 from typing import Any
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
@@ -30,7 +31,9 @@ class CustomUserChangeForm(UserChangeForm):
     date_of_birth = forms.DateField(
         widget=forms.DateInput(
         attrs={'placeholder':'MM-DD-YYYY', 'type':'date'},
-    ))
+        ),
+        required=False
+    )
     class Meta:
         model = UserModel
         exclude = ['user_permissions', 'groups', 'is_staff', 'is_superuser', 'is_active', 'last_login', 'date_joined']
