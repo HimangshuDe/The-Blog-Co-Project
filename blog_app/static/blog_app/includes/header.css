@@ -25,6 +25,7 @@ header h1 a{
 .header-group{
     display: flex;
     align-items: center;
+    margin-right: 10px;
 }
 
 .header-group a{
