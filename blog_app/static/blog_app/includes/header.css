@@ -26,11 +26,11 @@ header h1 a{
     display: flex;
     align-items: center;
     margin-right: 10px;
+    gap: 5px;
 }
 
 .header-group a{
     text-decoration: none;
-    margin: 5px;
     padding: 5px 10px;
     border-radius: 10px;
 }
