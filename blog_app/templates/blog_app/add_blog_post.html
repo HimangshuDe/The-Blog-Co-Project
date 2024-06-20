@@ -16,6 +16,7 @@ Add Blog
             <div class="form-wrap">
                 <h1>Create Post</h1>
                 <form action="{% url "add-blog" %}" method="post">
+                    {% csrf_token %}
                     {% for items in form %}
                     <div class="form-control">
                         <label id="{{items.label|lower}}">{{items.label}}</label>
