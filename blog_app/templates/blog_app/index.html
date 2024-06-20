@@ -45,10 +45,17 @@
                 </aside>
             </section>
         {% else %}
+            {% if request.user.is_authenticated %}
+            <div id="sign-in-message">
+                <h1>No Posts</h1>
+                <p>Please <a href="{% url 'add-blog' %}" class='bg-black'>Add</a> a post and contribute your thoughts!</p>
+            </div>
+            {% else %}
             <div id="sign-in-message">
                 <h1>No Posts</h1>
                 <p>Please <a href="{% url 'login' %}" class='bg-black'>Login</a> to create some blog posts!</p>
             </div>
+            {% endif %}
         {% endif %}
         {% if not request.user.is_authenticated and all_posts|length != 0 %}
             <div id="sign-in-message">
