@@ -5,7 +5,8 @@ html, body{
     padding: 0;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
-    background: linear-gradient(-45deg, #b6c9ff, #f0f8ff) no-repeat center center/cover;
+    background: url(../../../static/images/blog-account.jpg) no-repeat center center/cover;
+    /* background: linear-gradient(-45deg, #b6c9ff, #f0f8ff) no-repeat center center/cover; */
     object-fit: fill;
     overflow-x: hidden;
     height: 100vh;
@@ -23,6 +24,12 @@ html, body{
     margin-top: 100px;
 }
 
+/* Main tag */
+main{
+    display: flex;
+    justify-content: center;
+}
+
 /* Section Post */
 section#posts{
     display: flex;
@@ -31,9 +38,16 @@ section#posts{
     justify-content: space-around;
 }
 
+/* Post class */
+.post{
+    background: #ffffffab;
+    padding: 15px;
+    width: 60%;
+    border-radius: 10px;
+}
+
 /* Post Item class */
 .post-item{
-    border-bottom: 1px solid;
     margin: 10px;
     display: flex;
 }
@@ -60,12 +74,12 @@ section#posts{
 
 .post-data h2 a{
     text-decoration: none;
-    color: #03045e;
+    color: #1d3557;
 }
 
 .post-data h2 a:hover{
     text-decoration: underline;
-    color: #03045e;
+    color: #1d3557;
 }
 
 .post-data .post-tags{
@@ -92,6 +106,9 @@ section#posts{
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    background: #ffffffab;
+    border-radius: 10px;
+    width: 50%;
 }
 
 #sign-in-message p{
@@ -102,27 +119,4 @@ section#posts{
     
 #sign-in-message p a{
     text-decoration: none;
-}
-
-/* aside tag */
-#side-section h3{
-    margin: 10px 0 0 10px;
-    padding: 5px;
-}
-
-#side-section ul{
-    list-style: none;
-    padding: 5px;
-    margin: 0px 10px 10px 10px;
-    padding-top: 0;
-}
-
-#side-section ul li{
-    margin: 5px;
-}
-
-.all-post-tags{
-    border: 1px solid #808888;
-    border-radius: 5px;
-    margin: 15px 5px;
 }
