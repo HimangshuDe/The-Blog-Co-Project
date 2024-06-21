@@ -15,7 +15,7 @@ Add Blog
         <div class="container">
             <div class="form-wrap">
                 <h1>Create Post</h1>
-                <form action="{% url "add-blog" %}" method="post">
+                <form action="{% url "add-blog" %}" method="post" enctype='multipart/form-data'>
                     {% csrf_token %}
                     {% for items in form %}
                     <div class="form-control">

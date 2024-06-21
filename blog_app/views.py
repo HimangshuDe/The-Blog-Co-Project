@@ -1,7 +1,8 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import redirect, render, get_object_or_404
 from django.contrib.auth.decorators import login_required
 # from django.http import HttpResponse
 
+from auth_app.models import UserModel
 from blog_app.forms import AddBlogPost
 from blog_app.models import Post
 
@@ -24,12 +25,19 @@ def blog_detail_view(request, id):
     return render(request, 'blog_app/blog_detail.html', {'post':post,},)
 
 
+@login_required
 def create_blog(request):
     form = AddBlogPost()
     if request.method == 'POST':
-        form = AddBlogPost(request.POST)
+        form = AddBlogPost(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            post = form.save(commit=False)
+            post.creator = request.user
+            post.save()
+            return redirect('index')
+        
+        return render(request, "blog_app/add_blog_post.html", {'form':form})
+        
     return render(request, "blog_app/add_blog_post.html", {'form':form})
 # :: Note Section ::
 # NOTE #1: Add "Add blog" feature in the project

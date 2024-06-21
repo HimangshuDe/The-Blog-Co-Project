@@ -35,6 +35,7 @@ body {
   padding-right: 10px;
   display: flex;
   margin-bottom: 10px;
+  gap: 10px;
 }
 
 .form-control label {
@@ -42,7 +43,8 @@ body {
 }
 
 .form-control label#snap {
-  display: contents;
+  display: inline;
+  margin-right: 10px;
 }
 
 .form-control label#tags {
@@ -99,4 +101,16 @@ body {
   border-radius: 5px;
   height: fit-content;
   cursor: pointer;
+}
+
+
+/* Errorlists */
+.form-control ul.errorlist{
+  list-style: none;
+  display: block;
+}
+
+.form-control ul.errorlist li{
+  align-self: flex-start;
+  justify-self: flex-start;
 }
