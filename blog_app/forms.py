@@ -12,7 +12,6 @@ class AddBlogPost(forms.ModelForm):
             'excerpt':'Quote',
             'content':'Content',
             'image':'Snap',
-            'tag':'Tags',
         }
         widgets = {
             'title':forms.TextInput({'placeholder':"Enter title"}),

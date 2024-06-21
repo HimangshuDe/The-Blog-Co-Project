@@ -3,18 +3,17 @@ from django.contrib.auth.decorators import login_required
 # from django.http import HttpResponse
 
 from blog_app.forms import AddBlogPost
-from blog_app.models import Post, Tag
+from blog_app.models import Post
 
 # Create your views here.
 
 def index(request):
     all_posts = Post.objects.all()
-    all_tags = Tag.objects.all()
     if not request.user.is_authenticated:
         all_posts = Post.objects.all()[:3]
         
     # return HttpResponse("Hello World",)
-    return render(request, 'blog_app/index.html', {'all_posts':all_posts, 'all_tags':all_tags})
+    return render(request, 'blog_app/index.html', {'all_posts':all_posts})
 
 
 # @login_required()
@@ -27,6 +26,10 @@ def blog_detail_view(request, id):
 
 def create_blog(request):
     form = AddBlogPost()
+    if request.method == 'POST':
+        form = AddBlogPost(request.POST)
+        if form.is_valid():
+            form.save()
     return render(request, "blog_app/add_blog_post.html", {'form':form})
 # :: Note Section ::
 # NOTE #1: Add "Add blog" feature in the project
