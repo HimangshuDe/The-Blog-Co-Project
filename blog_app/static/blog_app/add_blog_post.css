@@ -110,8 +110,8 @@ form#formarea{
 }
 
 .form-controls textarea:focus{
-  backdrop-filter: blur(5px);
   background: #05050523;
+  backdrop-filter: blur(5px);
   transition: 0.9s ease-in-out;
 }
 
