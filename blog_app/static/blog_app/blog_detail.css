@@ -5,8 +5,11 @@ html, body{
     padding: 0;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
-    background:#f0f8ff;
+    background: url(../../../static/images/blog-account.jpg) no-repeat center center/cover;
+    overflow-x:hidden ;
 }
+
+
 
 /* Utility Class */
 .bg-black{
@@ -29,6 +32,13 @@ html, body{
     padding: 5px;
     display: flex;
     flex-direction: column;
+    align-self: center;
+    background: #ffffff81;
+    margin: 10px;
+    height: auto;
+    width: 60vw;
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
 }
 
 .post-heading h1,
@@ -41,33 +51,14 @@ html, body{
     font-size: 22px;
 }
 
-.post-content{
-    word-break: break-all;
-    line-break: anywhere;
-    padding: 15px;
-}
 
 .post-heading #author{
     align-self: center;
 }
 
-/* Post-Tags */
-.post-tags{
-    display: flex;
-    align-self: center;
-}
-
-.post-tags p{
-    padding: 5px;
-    margin: 5px;
-    font-size: 14px;
-    border: 1px solid grey;
-    border-radius: 5px;
-}
-
 /* Post Image */
 .post-image{
-    width: 640px;
+    width: 540px;
     height: auto;
 }
 
@@ -77,10 +68,45 @@ html, body{
     float: left;
     margin: 10px;
     box-shadow: 0 10px 30px #0000008c;
-    border-radius: 10px;
+    border-radius: 15px;
 }
+
+/* Post Details */
+#content{
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+#post-details{
+    align-self: center;
+    height: 60vh;
+    width: 90vw;
+    background: #ffffff81;
+    overflow: scroll;
+    padding: 10px;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+}
+
+.post-content{
+    word-break: break-all;
+    line-break: anywhere;
+    padding: 15px;
+}
+
 
 /* Post metadata */
 #post-metadata{
+    align-self: center;
+    width: 21vw;
+    background: #ffffff81;
+    margin: 20px 0 15px 0;
+    padding: 5px;
+    border-radius: 15px;
+}
+
+#post-metadata p{
+    display: block;
     text-align: center;
 }
