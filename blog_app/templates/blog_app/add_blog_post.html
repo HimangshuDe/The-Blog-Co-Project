@@ -10,26 +10,28 @@ Add Blog
 {% endblock css_files %}
 
 {% block page_content %}
+<header>
+  <h1>Create Post</h1>
+  <button id="cancel-btn" onclick='btnFunction()'>Cancel</button>
+</header>
 <main>
-    <section id="form-section">
-        <div class="container">
-            <div class="form-wrap">
-                <h1>Create Post</h1>
-                <form action="{% url "add-blog" %}" method="post" enctype='multipart/form-data'>
-                    {% csrf_token %}
-                    {% for items in form %}
-                    <div class="form-control">
-                        <label id="{{items.label|lower}}">{{items.label}}</label>
-                        {{items}}
-                        {{items.errors}}    
-                    </div>
-                    {% endfor %}
-                    <div class="form-control">
-                        <input type="submit" value="Create">
-                    </div>
-                </form>
-            </div>
+  <section id="form-section">
+    <form action="{% url "add-blog" %}" id="formarea" method="POST" enctype='multipart/form-data'>
+      {% csrf_token %}
+      {% for items in form %}
+        <div class="form-controls" id="id_{{items.label|lower}}">
+          <label for="id_{{items.label|lower}}">{{items.label}}</label>
+          {{items}}
+          {{items.errors}}
         </div>
-    </section>
+      {% endfor %}
+      <input type="submit" value="Create">
+    </form>
+  </section>
 </main>
+<script>
+    function btnFunction() {
+        window.close('', '_parent', '');
+    }
+</script>
 {% endblock page_content %}

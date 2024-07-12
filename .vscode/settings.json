@@ -11,5 +11,6 @@
     },
     "emmet.includeLanguages": {
         "django-html":"html"
-    }
+    },
+    "editor.formatOnSave": false
 }

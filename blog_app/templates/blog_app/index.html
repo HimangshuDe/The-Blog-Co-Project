@@ -31,7 +31,7 @@
             {% if request.user.is_authenticated %}
             <div id="sign-in-message">
                 <h1>No Posts</h1>
-                <p>Please <a href="{% url 'add-blog' %}" class='bg-black'>Add</a> a post and contribute your thoughts!</p>
+                <p>Please <a href="{% url 'add-blog' %}" target='_blank' class='bg-black'>Add</a> a post and contribute your thoughts!</p>
             </div>
             {% else %}
             <div id="sign-in-message">

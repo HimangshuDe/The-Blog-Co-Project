@@ -9,9 +9,9 @@ class AddBlogPost(forms.ModelForm):
         exclude = ['created_at', 'updated_at', 'creator']
         labels = {
             'title': "Title",
-            'excerpt':'Quote',
+            'excerpt':'Excerpt',
             'content':'Content',
-            'image':'Snap',
+            'image':'Image',
         }
         widgets = {
             'title':forms.TextInput({'placeholder':"Enter title"}),
