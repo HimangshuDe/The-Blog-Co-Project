@@ -15,11 +15,6 @@
         <h1>{{post.title}}</h1>
         <p id='excerpt'>{{post.excerpt}}</p>
         
-        <div class="post-tags">
-            {% for tags in post.tag.all %}
-                <p>{{tags.caption}}</p>
-            {% endfor %}
-        </div>
     </div>
     <main>
         <section id="post-details">

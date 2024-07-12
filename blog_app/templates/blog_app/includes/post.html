@@ -5,11 +5,6 @@
     <div class="overlay">
         <h2><a href="{% url "blog-detail" item.post_id %}">{{item.title}}</a></h2>
         <p>{{item.excerpt}}</p>
-        <div class="post-tags">
-            {% for tags in item.tag.all %}
-                <p>{{tags.caption}}</p>
-            {% endfor %}
-        </div>
     </div>
 </div>
 {% endfor %}
