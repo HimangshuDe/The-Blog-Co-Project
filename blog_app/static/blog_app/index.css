@@ -40,16 +40,16 @@ section#posts{
 
 /* Post class */
 .post{
-    background: #ffffffab;
     padding: 15px;
     width: 60%;
-    border-radius: 10px;
 }
 
 /* Post Item class */
 .post-item{
+    background: #ffffffab;
     margin: 10px;
     display: flex;
+    border-radius: 10px;
 }
 
 .post-item .post-image{
