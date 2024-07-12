@@ -1,11 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
 
 html,
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
 }
 
 body {
@@ -78,7 +77,6 @@ form#formarea{
   border: none;
   border-bottom: 1px solid #ccc;
   font-family: inherit;
-  /* background: #9797972c; */
   background: transparent;
   width: 50%;
   padding: 5px;
@@ -100,7 +98,6 @@ form#formarea{
 /* Textarea styling */
 .form-controls textarea{
   height: 390px;
-  /* height: 1000vh; */
   width: 99vw;
   font-size: 18px;
   background: transparent;
@@ -111,22 +108,23 @@ form#formarea{
   resize: none;
   transition: 0.9s ease-in-out;
 }
+
 .form-controls textarea:focus{
-  background: #05050523;
   backdrop-filter: blur(5px);
+  background: #05050523;
   transition: 0.9s ease-in-out;
 }
 
 #formarea input[type='submit']{
   align-self: self-end;
   position: sticky;
-  bottom: 30px;
-  right: 30px;
+  bottom: 60px;
+  right: 40px;
   z-index: 10;
   order: 5;
-  padding: 5px;
+  padding: 7px;
   font-family: inherit;
-  font-size: larger;
+  font-size: x-large;
   background: white;
   border: 1px solid;
   border-radius: 10px;
@@ -137,7 +135,6 @@ form#formarea{
 #formarea input[type='submit']:hover{
   background: linear-gradient(to left top, #ffbfc3, #ffcd80);
   border: 1px solid transparent;
-  /* color: ; */
 }
 
 /* Errorlists */
