@@ -5,24 +5,34 @@ html, body{
     box-sizing: border-box;
 }
 
+body{
+    background: url("../../../static/images/macbook-pro-beside-white-ipad.jpg") no-repeat center center/cover;
+    backdrop-filter: brightness(70%);
+    height: 100vh;
+}
+
 /* Form Styling */
 .form-wrap{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border: 1px solid #000;
-    border-radius: 10px;
+    border: 1px solid transparent;
+    border-radius: 15px;
     padding: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background: #ffffff71;
+    backdrop-filter: blur(5px);
 }
 
+.form-header{
+    margin-bottom: 10px;
+}
 
 form{
-    padding: 5px;
-    margin: 10px;
+    margin: 5px 10px 10px 10px;
 }
 
 .form-controls {
@@ -32,22 +42,50 @@ form{
 }
 
 .form-controls div{
-    margin: 10px;
+    margin: 5px;
     padding: 5px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    justify-items: center;
+    gap: 10px;
+    align-items: start;
 }
 
 .form-controls div>label{
     margin-right: 10px;
+    order: 1;
 }
 
 .form-controls div>input{
     height: 22px;
     padding: 2px;
-    margin: 5px;
+    margin: 5px 5px 0px 5px;
     width: 200px;
+    font-size: 16px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    transition: 0.8s ease;
+    order: 2;
+}
+
+.form-controls div>input:focus{
+    outline:none;
+    border-bottom: 1px solid #000;
+    transition: 0.8s ease;
+}
+
+.form-controls div>input[aria-invalid='true']{
+    border-bottom: 1px solid #f00;
+}
+
+.form-controls div ul.errorlist{
+    list-style: none;
+    order: 3;
+    color: #f00;
+    font-size: small;
+    padding: 5px;
+    margin: 0;
 }
 
 .form-controls input[type='submit']{
@@ -58,6 +96,12 @@ form{
     align-self: center;
     padding: 5px;
     cursor: pointer;
+    transition: 0.8s ease;
+}
+
+.form-controls input[type='submit']:hover{
+    padding: 5px 10px;
+    transition: 0.8s ease;
 }
 
 /* Info Box */
