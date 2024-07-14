@@ -9,6 +9,8 @@
                 <summary id='account' class='bg-black'>
                     {% if request.user.first_name == '' %}
                     {{request.user.email}}
+                    {% else %}
+                    {{request.user}}
                     {% endif %}
                 </summary>
 
