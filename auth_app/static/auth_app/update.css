@@ -7,7 +7,6 @@ html, body{
 
 body{
     background: url("../../../static/images/macbook-pro-beside-white-ipad.jpg") no-repeat center center/cover;
-    backdrop-filter: brightness(70%);
     height: 100vh;
 }
 
@@ -23,8 +22,9 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: #ffffff71;
+    background: #ffffff91;
     backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 }
 
 .form-header{
