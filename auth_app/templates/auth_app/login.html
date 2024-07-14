@@ -22,7 +22,7 @@ Check-In | The Blog Company
     <hr>
     <div class="form-wrap">
         <h1>Check-In</h1>
-        <form action="{% url 'login' %}" method="POST">
+        <form action="{{request.get_full_path}}" method="POST">
             {% csrf_token %}
             {% for items in form %}
                 <div class="form-controls">
