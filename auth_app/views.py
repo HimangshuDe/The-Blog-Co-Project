@@ -103,9 +103,8 @@ class VerifyOTPView(View):
                 user.otp = None
                 user.otp_expiry = None
                 user.save()
-                request.session['is_verified'] = True
+                request.session.pop('user_email')
                 login(request, user)
-                # NOTE: Below line needs to be changed!!!!!
                 return redirect(reverse('reset-password'))
             return render(request, 'auth_app/verify_otp.html', {"message":"OTP Expired"})
         return render(request, 'auth_app/verify_otp.html', {'message':"Invalid OTP"})
