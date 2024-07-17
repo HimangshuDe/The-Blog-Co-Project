@@ -68,3 +68,35 @@ body{
     color: #000;
     font-weight: bold;
 }
+
+#error-message{
+    color: red;
+    font-weight: 550;
+    text-align: center;
+    padding: 5px;
+}
+
+#resend-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#resend-otp{
+    border: 1px solid #ffffff;
+    background-color: transparent;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#resend-otp:active{
+    transform: scale(0.9);
+}
+
+#resend-otp:hover{
+    background: green;
+    font-weight: bold;
+    border-color: green;
+}
