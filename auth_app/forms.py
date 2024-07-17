@@ -36,7 +36,7 @@ class CustomUserChangeForm(UserChangeForm):
     )
     class Meta:
         model = UserModel
-        exclude = ['user_permissions', 'groups', 'is_staff', 'is_superuser', 'is_active', 'last_login', 'date_joined']
+        exclude = ['user_permissions', 'groups', 'is_staff', 'is_superuser', 'is_active', 'last_login', 'date_joined','otp','otp_expiry']
         
 
     def __init__(self, *args: Any, **kwargs: Any) -> None:
