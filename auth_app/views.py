@@ -3,7 +3,7 @@ from django.shortcuts import redirect, render
 from django.http import HttpResponse, HttpResponsePermanentRedirect, HttpResponseRedirect
 from django.contrib.auth import logout, login, authenticate
 from django.contrib.auth.views import PasswordChangeView
-from django.contrib.auth.forms import PasswordChangeForm, PasswordResetForm
+from django.contrib.auth.forms import PasswordChangeForm, SetPasswordForm
 from django.urls import reverse, reverse_lazy
 from django.contrib.auth.decorators import login_required
 from django.views.generic.base import View
@@ -105,7 +105,8 @@ class VerifyOTPView(View):
                 user.save()
                 request.session['is_verified'] = True
                 login(request, user)
-                return redirect(reverse('update-password'))
+                # NOTE: Below line needs to be changed!!!!!
+                return redirect(reverse('reset-password'))
             return render(request, 'auth_app/verify_otp.html', {"message":"OTP Expired"})
         return render(request, 'auth_app/verify_otp.html', {'message':"Invalid OTP"})
 
@@ -133,6 +134,25 @@ class ChangePasswordView(PasswordChangeView):
     template_name = 'auth_app/update_password.html'
     success_url = reverse_lazy('account')
     
+
+# class ResetPasswordView(View):
+#     def get(self, request):
+#         user = request.user
+#         form = SetPasswordForm(user)
+#         return render(request, 'auth_app/reset_password.html', {'form':form})
+
+#     def post(self, request):
+#         user = request.user
+#         form = SetPasswordForm(request.POST)
+#         if form.is_valid():
+#             form.save()
+#             return redirect(reverse('account'))
+#         return render(request, 'auth_app/reset_password.html', {'form':form})
+
+class ResetPasswordView(PasswordChangeView):
+    form_class = SetPasswordForm
+    template_name = 'auth_app/reset_password.html'
+    success_url = reverse_lazy('account')
 
 
 

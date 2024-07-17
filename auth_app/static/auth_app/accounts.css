@@ -97,15 +97,13 @@ header{
 }
 
 .label-surr-box{
-    width: 120px;
+    width: 100px;
 }
 
 .info-surr-box{
-    border: 1px solid #000;
     border-radius: 5px;
     padding: 5px;
-    margin-left: 10px;
-    width: 200px;
+    font-weight: bold;
 }
 
 #password-group{

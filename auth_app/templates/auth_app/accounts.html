@@ -35,7 +35,7 @@ Account | The Blog Company
         <div class="credentials">
             <div id="name-group">
                 <div class="label-block">
-                    <p class='label-surr-box'>First Name</p>
+                    <p class='label-surr-box'>First Name:</p>
                     <p class="info-surr-box">
                         {% if user_data.first_name == '' %}
                         &nbsp;
@@ -45,7 +45,7 @@ Account | The Blog Company
                     </p>
                 </div>
                 <div class="label-block">
-                    <p class='label-surr-box'>Last Name</p>
+                    <p class='label-surr-box'>Last Name:</p>
                     
                     <p class="info-surr-box">
                             {% if user_data.last_name == '' %}
@@ -57,7 +57,7 @@ Account | The Blog Company
                     </p>
                 </div>
                 <div class="label-block">
-                    <p class='label-surr-box'>Email</p>
+                    <p class='label-surr-box'>Email:</p>
                     <p class='info-surr-box'>{{user_data.email}}</p>
                 </div>
             </div>
@@ -73,7 +73,7 @@ Account | The Blog Company
         </div>
         <div id="date-group" class='credentials'>
             <div class="label-block">
-            <p class="label-surr-box">Date of Birth</p>
+            <p class="label-surr-box">Date of Birth:</p>
             <p class="info-surr-box">
                 {% if user_data.date_of_birth == None %}
                     Not Provided
@@ -85,12 +85,12 @@ Account | The Blog Company
             </div>
             
             <div class="label-block">
-                <p class="label-surr-box">Last Login</p>
+                <p class="label-surr-box">Last Login:</p>
                 <p class="info-surr-box">{{user_data.last_login}}</p>
             </div>
         
             <div class="label-block">
-                <p class="label-surr-box">Joined on</p>
+                <p class="label-surr-box">Joined on:</p>
                 <p class="info-surr-box">{{user_data.date_joined}}</p>
             </div>
         </div>
