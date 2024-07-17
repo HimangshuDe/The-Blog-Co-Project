@@ -165,3 +165,7 @@ cython_debug/
 # Uploads and media files
 uploads/
 media/
+
+# Excalidraw drawings
+*.excalidraw
+*.excalidraw.*
