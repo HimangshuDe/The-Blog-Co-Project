@@ -31,6 +31,8 @@ class UserModelAdmin(UserAdmin):
                     'date_of_birth',
                     'last_login',
                     'date_joined',
+                    'otp',
+                    'otp_expiry',
                 )
             }
         )

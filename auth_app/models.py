@@ -10,8 +10,10 @@ class UserModel(AbstractUser):
     username = None
     email = models.EmailField(unique=True,)
     date_of_birth = models.DateField(blank=True, null=True)
+    otp = models.CharField(max_length=6, null=True, blank=True)
+    otp_expiry = models.DateTimeField(null=True, blank=True)
 
-    objects = manager.UserManager()
+    objects = manager.UserManager() # type: ignore
 
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = []

@@ -68,6 +68,10 @@ hr{
 /* Form part */
 .form-wrap{
     margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    align-items: center;
 }
 
 .form-wrap h1{
@@ -75,7 +79,7 @@ hr{
 }
 
 form{
-    margin: 30px;
+    margin: 10px 30px;
 }
 
 .form-controls{
@@ -108,8 +112,17 @@ form{
     color: #ff0000;
 }
 
-.form-controls #forgot-password{
-    font-size: 12px;
+#forgot-password{
+    font-size: 13px;
+    align-self: flex-end;
+    text-decoration: none;
+    padding: 0 3px;
+    margin-right: 25px;
+    color: #5378d8;
+}
+
+#forgot-password:hover{
+    text-decoration: underline;
 }
 
 .form-wrap button{
@@ -126,8 +139,14 @@ form{
     font-weight: 500;
 }
 
+.form-wrap button:active{
+    transform: scale(0.9);
+}
+
 .form-wrap button:hover{
-    background: #d5faff;
+    background: #000;
+    color: #fff;
+    font-weight: bold;
 }
 
 /* register section */
