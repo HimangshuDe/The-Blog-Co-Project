@@ -21,7 +21,7 @@ Verify | The Blog Company
             </form>
         </div>
         {% if message == "OTP Expired" %}
-        <form action="{% url "reset-password" %}" method="post" id='resend-form'>
+        <form action="{% url "forgot-password" %}" method="post" id='resend-form'>
             <p id='error-message'>OTP has Expired!</p>
             {% csrf_token %}
             <input type="hidden" name="user_email" value="{{request.session.user_email}}">
