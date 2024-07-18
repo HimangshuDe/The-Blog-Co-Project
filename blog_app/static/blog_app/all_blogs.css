@@ -1,0 +1,122 @@
+
+
+html, body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: url(../../../static/images/blog-account.jpg) no-repeat center center/cover;
+    object-fit: fill;
+    overflow-x: hidden;
+    height: 100vh;
+}
+
+/* Header Utility Class */
+.bg-black{
+    background: #000;
+    color: #fff;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+.m-top-100{
+    margin-top: 100px;
+}
+
+/* Main tag */
+main{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Section Post */
+section#posts{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-around;
+}
+
+/* Post class */
+.post{
+    padding: 15px;
+    width: 60%;
+}
+
+/* Post Item class */
+.post-item{
+    background: #ffffffab;
+    margin: 10px;
+    display: flex;
+    border-radius: 10px;
+}
+
+.post-item .post-image{
+    height: 144px;
+    width: 220px;
+    margin: 10px;
+}
+
+.post-image img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.post-data{
+    margin: 10px;
+}
+
+.post-data p{
+    margin-bottom: 5px;
+}
+
+.post-data h2 a{
+    text-decoration: none;
+    color: #1d3557;
+}
+
+.post-data h2 a:hover{
+    text-decoration: underline;
+    color: #1d3557;
+}
+
+.post-data .post-tags{
+    display: flex;
+    justify-content: space-around;
+    width: 200px;
+}
+.post-data .post-tags p{
+    border: 1px solid #808888;
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 12px;
+}
+
+.post-item:hover .post-image img{
+    box-shadow: 0 10px 10px #000000a8;
+}
+
+
+/* Sign In Message */
+#sign-in-message{
+    margin: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: #ffffffab;
+    border-radius: 10px;
+    width: 50%;
+}
+
+#sign-in-message p{
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding: 5px;
+    }
+    
+#sign-in-message p a{
+    text-decoration: none;
+}

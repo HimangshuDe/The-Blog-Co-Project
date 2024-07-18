@@ -9,19 +9,23 @@ from blog_app.models import Post
 # Create your views here.
 
 def index(request):
+    return render(request, 'blog_app/index.html')
+
+def all_blogs(request):
+    request.session['blog_detail'] = False
     all_posts = Post.objects.all()
     if not request.user.is_authenticated:
         all_posts = Post.objects.all()[:3]
+    
         
     # return HttpResponse("Hello World",)
-    return render(request, 'blog_app/index.html', {'all_posts':all_posts})
+    return render(request, 'blog_app/all_blogs.html', {'all_posts':all_posts})
 
 
-# @login_required()
 def blog_detail_view(request, id):
     post = Post.objects.get(post_id=id)
-    
-    # return HttpResponse("Blog Detail View")
+    request.session['blog_detail'] = True
+
     return render(request, 'blog_app/blog_detail.html', {'post':post,},)
 
 

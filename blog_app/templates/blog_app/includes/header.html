@@ -1,6 +1,9 @@
 <header>
     <h1><a href="{% url "index" %}">The <span class="bg-black">Blog</span> Company</a></h1>
     <div class="header-group">
+        {% if request.session.blog_detail %}
+            <a href="{% url "all-blogs" %}" id='back'>Back</a>
+        {% endif %}
         {% if not request.user.is_authenticated %}
             <a href="{% url 'login' %}" id="login">Sign In</a>
         {% else %}

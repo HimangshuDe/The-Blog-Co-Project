@@ -1,51 +1,106 @@
-{% extends "base.html" %}
 {% load static %}
-{% block page_title %} The Blog Company {% endblock page_title %}
+<!DOCTYPE html>
+<html lang="en">
 
-{% block css_files %}
-<link rel="stylesheet" href="{% static "blog_app/index.css" %}">
-<link rel="stylesheet" href="{% static "blog_app/includes/header.css" %}">
-{% endblock css_files %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static "images/favicon.ico" %}" type="image/x-icon">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/7cb8101bb4.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static "blog_app/index.css" %}">
+    <title>The Blog Company</title>
+</head>
 
-{% block page_content %}
-    {% include "blog_app/includes/header.html" %}
-    <div class="m-top-100"></div>
+<body>
     <main>
-        {% if all_posts|length != 0%}
-            <section id="posts">
-                <div class="post">
-                    {% for item in all_posts %}
-                        <div class="post-item">
-                            <div class="post-image">
-                                <img src="{{item.image.url}}" alt="">
-                            </div>
-                            <div class="post-data">
-                                <h2><a href="{% url "blog-detail" item.post_id %}">{{item.title}}</a></h2>
-                                <p>{{item.excerpt}}</p>
-                            </div>
+        <section id="header">
+            <div class="header-main">
+                <h2>Welcome to</h2>
+                <h1>The <span class="bg-black">Blog</span> Company</h1>
+                <div class="text-data">
+                    <p id="excerpt">Let we help you to express your thoughts and ideas. </p>
+                    <div class="btn-grp">
+                        <div class="btn" id="explore">
+                            <span class="material-symbols-outlined">explore</span>
+                            <a href="#what-is">Explore more</a>
                         </div>
-                    {% endfor %}
+                        <div class="btn" id="read-blog">
+                            <span class="material-symbols-outlined">local_library</span>
+                            <a href="{% url "all-blogs" %}">Read Our Blogs</a>
+                        </div>
+                    </div>
                 </div>
-            </section>
-        {% else %}
-            {% if request.user.is_authenticated %}
-            <div id="sign-in-message">
-                <h1>No Posts</h1>
-                <p>Please <a href="{% url 'add-blog' %}" target='_blank' class='bg-black'>Add</a> a post and contribute your thoughts!</p>
             </div>
-            {% else %}
-            <div id="sign-in-message">
-                <h1>No Posts</h1>
-                <p>Please <a href="{% url 'login' %}" class='bg-black'>Login</a> to create some blog posts!</p>
-            </div>
-            {% endif %}
-        {% endif %}
-        {% if not request.user.is_authenticated and all_posts|length != 0 %}
-            <div id="sign-in-message">
-                <p>Please <a href="{% url 'login' %}" class='bg-black'>Login</a> to see more!</p>
-            </div>
-        {% endif %}
-    </main>
-    
+        </section>
 
-{% endblock page_content %}
+        <section class="blog-class" id="what-is">
+            <h1>What is a Blog?</h1>
+            <p class="info-text">A blog is a type of online journal or informational website that displays a collection
+                of
+                posts, articles, or entries.</p>
+            <div class="btn" id="read-blog">
+                <a href="#importance">Next</a>
+                <span class="material-symbols-outlined">arrow_forward</span>
+            </div>
+        </section>
+
+        <section class="blog-class" id="importance">
+            <h1>Why Blog is Important?</h1>
+            <p class="info-text">A blog is a great way to show off your expertise on a subject and establish your
+                authority. If you write a good blog in a tight niche, you will quickly become well known in that niche
+                and become a go-to authority on that subject.</p>
+            <div class="btn" id="read-blog">
+                <a href="#benefits">Next</a>
+                <span class="material-symbols-outlined">arrow_forward</span>
+            </div>
+        </section>
+
+        <section class="blog-class" id="benefits">
+            <h1>Benefits of Blogging</h1>
+            <div id="info-box">
+                <p class="info-text">There are many benefits of blogging. Some of them are:</p>
+                <ol>
+                    <li><strong>Self-expression and creativity</strong>: Blogging provides an outlet for sharing
+                        thoughts, ideas and
+                        experience.
+                    </li>
+
+                    <li>
+                        <strong>It Opens New Avenues</strong>:Blogging opens up new communication avenues that weren’t
+                        possible before the internet. A blog provides a personal connection with your readers that
+                        builds trust and credibility.
+                    </li>
+
+                    <li><strong>Make New Connections</strong>: Blogging connects you with like-minded people globally,
+                        establishing you as an expert in your field. This connection can foster friendships, business
+                        prospects, and other opportunities.</li>
+
+                    <li><strong>Increased Creativity</strong>: Blogging enhances creativity in personal and professional
+                        realms. It allows individuals to explore diverse topics, experiment with writing styles, and
+                        creatively express their thoughts and ideas.</li>
+                </ol>
+            </div>
+        </section>
+    </main>
+    <footer id="page-footer">
+        <p>&copy; The Blog Company | All Rights Reserved 2024</p>
+        <div class="footer-box">
+            <a href="#">Sign In</a>
+            <a href="#">Join</a>
+        </div>
+        <div class="social-handles">
+            <p>Follow us on:</p>
+            <div class="social-box">
+                <a href="https://www.facebook.com/" target='_blank'><i class="fa-brands fa-facebook" id="facebook"></i></a>
+                <a href="https://www.x.com/" target='_blank'><i class="fa-brands fa-x-twitter" id="x"></i></a>
+                <a href="https://www.youtube.com/" target='_blank'><i class="fa-brands fa-youtube" id="youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

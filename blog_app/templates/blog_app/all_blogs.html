@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static %}
+{% block page_title %} The Blog Company {% endblock page_title %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static "blog_app/all_blogs.css" %}">
+<link rel="stylesheet" href="{% static "blog_app/includes/header.css" %}">
+{% endblock css_files %}
+
+{% block page_content %}
+    {% include "blog_app/includes/header.html" %}
+    <div class="m-top-100"></div>
+    <main>
+        {% if all_posts|length != 0%}
+            <section id="posts">
+                <div class="post">
+                    {% for item in all_posts %}
+                        <div class="post-item">
+                            <div class="post-image">
+                                <img src="{{item.image.url}}" alt="">
+                            </div>
+                            <div class="post-data">
+                                <h2><a href="{% url "blog-detail" item.post_id %}">{{item.title}}</a></h2>
+                                <p>{{item.excerpt}}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </section>
+        {% else %}
+            {% if request.user.is_authenticated %}
+            <div id="sign-in-message">
+                <h1>No Posts</h1>
+                <p>Please <a href="{% url 'add-blog' %}" target='_blank' class='bg-black'>Add</a> a post and contribute your thoughts!</p>
+            </div>
+            {% else %}
+            <div id="sign-in-message">
+                <h1>No Posts</h1>
+                <p>Please <a href="{% url 'login' %}" class='bg-black'>Login</a> to create some blog posts!</p>
+            </div>
+            {% endif %}
+        {% endif %}
+        {% if not request.user.is_authenticated and all_posts|length != 0 %}
+            <div id="sign-in-message">
+                <p>Please <a href="{% url 'login' %}" class='bg-black'>Login</a> to see more!</p>
+            </div>
+        {% endif %}
+    </main>
+    
+
+{% endblock page_content %}
