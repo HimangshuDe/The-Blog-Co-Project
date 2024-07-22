@@ -22,7 +22,7 @@ Your Blogs
                 <div class="item-image">
                     <img src="{{items.image.url}}">
                 </div>
-                <a href='{% url "blog-detail" items.post_id %}'>{{items.title}}</a>
+                <a href='{% url "blog-detail" items.post_id %}' target='_blank'>{{items.title}}</a>
                 <p>{{items.excerpt}}</p>
                 <time>{{items.update_at}}</time>
             </div>
