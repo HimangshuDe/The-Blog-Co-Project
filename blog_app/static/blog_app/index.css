@@ -11,9 +11,8 @@ body {
 section {
     position: relative;
     width: 100vw;
-    height: 100vh;
+    height: 95vh;
     background: url("../../../static/images/blue-surface-with-study-tools.jpg") no-repeat center center / cover;
-    backdrop-filter: brightness(80%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -23,7 +22,6 @@ section::before {
     content: "";
     position: absolute;
     top: 0;
-    z-index: -1;
     left: 0;
     height: inherit;
     width: inherit;
@@ -40,6 +38,7 @@ section::before {
 .header-main {
     color: #fff;
     padding: 5px;
+    z-index: 2;
 }
 
 .header-main h2 {
@@ -107,6 +106,10 @@ section::before {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.blog-class *{
+    z-index: 2;
 }
 
 .blog-class h1 {
