@@ -51,6 +51,5 @@ def list_user_blogs(request):
     user = request.user
     request.session['off_home']=True
     user_blog_posts = Post.objects.filter(creator=user)
-    print(user_blog_posts)
     return render(request, 'blog_app/user_blogs.html', {'blogs':user_blog_posts})
     
