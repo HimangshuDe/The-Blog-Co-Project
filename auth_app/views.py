@@ -51,7 +51,7 @@ def user_login(request):
                 if request.GET.get('next'):
                     return HttpResponsePermanentRedirect(request.GET.get('next'))
 
-                return HttpResponsePermanentRedirect(reverse('index'))
+                return HttpResponsePermanentRedirect(reverse('all-blogs'))
              
             return render(request, 'auth_app/login.html', {'form':form, 'error':"Invalid Credentials!"})
 

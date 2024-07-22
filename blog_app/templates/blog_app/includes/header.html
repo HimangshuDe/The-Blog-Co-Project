@@ -1,9 +1,6 @@
 <header>
-    <h1><a href="{% url "index" %}">The <span class="bg-black">Blog</span> Company</a></h1>
+    <h1><a href="{% url "index" %}">{{header_title}}</a></h1>
     <div class="header-group">
-        {% if request.session.blog_detail %}
-            <a href="{% url "all-blogs" %}" id='back'>Back</a>
-        {% endif %}
         {% if not request.user.is_authenticated %}
             <a href="{% url 'login' %}" id="login">Sign In</a>
         {% else %}
@@ -22,6 +19,9 @@
                         <li><a href="{% url "add-blog" %}" id='add-post' target="_blank"> <span class="material-symbols-outlined">
                             add
                             </span><span>Add Post</span></a></li>
+                        <li><a href="{% url "user-blogs" %}" id='add-post'> <span class="material-symbols-outlined">
+                            notes
+                            </span><span>Your Posts</span></a></li>
                         <li><a href="{% url "account" %}"><span class="material-symbols-outlined">
                             person
                             </span> <span>Your Account</span></a></li>
@@ -31,6 +31,9 @@
                     </ul>
                 </div>
             </details>
+        {% endif %}
+        {% if request.session.off_home %}
+            <a href="{% url "all-blogs" %}" id='back'>Back</a>
         {% endif %}
     </div>
 </header>

@@ -1,5 +1,6 @@
 from django.shortcuts import redirect, render, get_object_or_404
 from django.contrib.auth.decorators import login_required
+from django.views.generic.base import View
 # from django.http import HttpResponse
 
 from auth_app.models import UserModel
@@ -12,7 +13,7 @@ def index(request):
     return render(request, 'blog_app/index.html')
 
 def all_blogs(request):
-    request.session['blog_detail'] = False
+    request.session['off_home'] = False
     all_posts = Post.objects.all()
     if not request.user.is_authenticated:
         all_posts = Post.objects.all()[:3]
@@ -24,7 +25,7 @@ def all_blogs(request):
 
 def blog_detail_view(request, id):
     post = Post.objects.get(post_id=id)
-    request.session['blog_detail'] = True
+    request.session['off_home'] = True
 
     return render(request, 'blog_app/blog_detail.html', {'post':post,},)
 
@@ -43,8 +44,13 @@ def create_blog(request):
         return render(request, "blog_app/add_blog_post.html", {'form':form})
         
     return render(request, "blog_app/add_blog_post.html", {'form':form})
-# :: Note Section ::
-# NOTE #1: Add "Add blog" feature in the project
-# NOTE #2: Implement addition of new tags via "add blog" feature, whenever user enters a new tag in
-# the tag field if it exists then no change, if not, then a new tag will be created from 
-# the entered tag.
+
+
+@login_required
+def list_user_blogs(request):
+    user = request.user
+    request.session['off_home']=True
+    user_blog_posts = Post.objects.filter(creator=user)
+    print(user_blog_posts)
+    return render(request, 'blog_app/user_blogs.html', {'blogs':user_blog_posts})
+    

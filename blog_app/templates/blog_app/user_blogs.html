@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_title %}
+Your Blogs
+{% endblock page_title %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static "blog_app/includes/header.css" %}">
+<link rel="stylesheet" href="{% static "blog_app/user_blogs.css" %}">
+{% endblock css_files %}
+
+{% block page_content %}
+{% include "blog_app/includes/header.html" with header_title="<span class='bg-black'>Your</span> Blogs"%}
+<main>
+    <div class="m-top-90"></div>
+    <section id="blog-lists">
+        <div class="container">
+            {% if blogs|length > 0 %}
+            {% for items in blogs %}
+            <div class="blog-item">
+                <div class="item-image">
+                    <img src="{{items.image.url}}">
+                </div>
+                <a href='{% url "blog-detail" items.post_id %}'>{{items.title}}</a>
+                <p>{{items.excerpt}}</p>
+                <time>{{items.update_at}}</time>
+            </div>
+            {% endfor %}
+            {% else %}
+            <h1 id="info-title">No Posts!</h1>
+            <p id="info-text">Please create some posts <a href="{% url "add-blog" %}">here</a>.</p>
+            {% endif %}
+        </div>
+    </section>
+</main>
+{% endblock page_content %}
+

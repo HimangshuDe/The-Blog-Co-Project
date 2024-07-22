@@ -8,7 +8,7 @@
 {% endblock css_files %}
 
 {% block page_content %}
-    {% include "blog_app/includes/header.html" %}
+    {% include "blog_app/includes/header.html" with header_title="The <span class='bg-black'>Blog</span> Company" %}
     <div class="m-top-100"></div>
     <main>
         {% if all_posts|length != 0%}
