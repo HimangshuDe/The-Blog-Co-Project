@@ -1,5 +1,6 @@
 from django.shortcuts import redirect, render, get_object_or_404
 from django.contrib.auth.decorators import login_required
+from django.urls import reverse
 from django.views.generic.base import View
 # from django.http import HttpResponse
 
@@ -39,11 +40,11 @@ def create_blog(request):
             post = form.save(commit=False)
             post.creator = request.user
             post.save()
-            return redirect('index')
+            return redirect('all-blogs')
         
-        return render(request, "blog_app/add_blog_post.html", {'form':form})
+        return render(request, "blog_app/add_blog_post.html", {'form':form, 'title':'Create', 'btnTitle':'Create'})
         
-    return render(request, "blog_app/add_blog_post.html", {'form':form})
+    return render(request, "blog_app/add_blog_post.html", {'form':form, 'title':'Create', 'btnTitle':'Create'})
 
 
 @login_required
@@ -53,3 +54,22 @@ def list_user_blogs(request):
     user_blog_posts = Post.objects.filter(creator=user)
     return render(request, 'blog_app/user_blogs.html', {'blogs':user_blog_posts})
     
+
+class EditBlogView(View):
+    def get(self, request, id):
+        post_data = Post.objects.get(post_id=id)
+        edit_form = AddBlogPost(instance=post_data)
+        return render(request, 'blog_app/add_blog_post.html', {'form':edit_form, 'title':"Update", 'btnTitle':"Update"})
+
+    def post(self, request, id):
+        post_data = Post.objects.get(post_id=id)
+        edit_form = AddBlogPost(request.POST, instance=post_data)
+        if edit_form.is_valid():
+            edit_form.save()
+            return redirect('user-blogs')
+        return render(request, 'blog_app/add_blog_post.html', {'form':edit_form, 'title':"Update", 'btnTitle':"Update"})
+
+
+def delete_blog(request, id):
+    Post.objects.get(post_id=id).delete()
+    return redirect('all-blogs')

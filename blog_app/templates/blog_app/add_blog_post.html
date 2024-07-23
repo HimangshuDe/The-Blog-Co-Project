@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block page_title %}
-Add Blog
+{{title}} Blog
 {% endblock page_title %}
 
 {% block css_files %}
@@ -11,12 +11,12 @@ Add Blog
 
 {% block page_content %}
 <header>
-  <h1>Create Post</h1>
+  <h1>{{ title }} Post</h1>
   <button id="cancel-btn" onclick='btnFunction()'>Cancel</button>
 </header>
 <main>
   <section id="form-section">
-    <form action="{% url "add-blog" %}" id="formarea" method="POST" enctype='multipart/form-data'>
+    <form action="{{ request.get_full_path }}" id="formarea" method="POST" enctype='multipart/form-data'>
       {% csrf_token %}
       {% for items in form %}
         <div class="form-controls" id="id_{{items.label|lower}}">
@@ -25,7 +25,7 @@ Add Blog
           {{items.errors}}
         </div>
       {% endfor %}
-      <input type="submit" value="Create">
+      <input type="submit" value="{{btnTitle}}">
     </form>
   </section>
 </main>
