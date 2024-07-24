@@ -6,9 +6,8 @@ Your Blogs
 {% endblock page_title %}
 
 {% block css_files %}
-<link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 <link rel="stylesheet" href="{% static "blog_app/includes/header.css" %}">
+<link rel="stylesheet" href="{% static "blog_app/includes/post.css" %}">
 <link rel="stylesheet" href="{% static "blog_app/user_blogs.css" %}">
 {% endblock css_files %}
 
@@ -20,22 +19,13 @@ Your Blogs
         <div class="container">
             {% if blogs|length > 0 %}
             {% for items in blogs %}
-            <div class="blog-item">
-                <div class="item-image">
-                    <img src="{{items.image.url}}">
-                </div>
-                <a href='{% url "blog-detail" items.post_id %}' target='_blank'>{{items.title}}</a>
-                <p>{{items.excerpt}}</p>
-                <time>{{items.update_at}}</time>
-                <div class="action-btns">
-                    <a href="{% url "edit-blog" items.post_id %}" target='_blank'><span class="material-symbols-outlined">edit</span></a>
-                    <a href="{% url "delete-blog" items.post_id %}"><span class="material-symbols-outlined">delete</span></a>
-                </div>
-            </div>
+            {% include "blog_app/includes/post.html" with item=items actionBtns=True %}
             {% endfor %}
             {% else %}
-            <h1 id="info-title">No Posts!</h1>
-            <p id="info-text">Please create some posts <a href="{% url "add-blog" %}">here</a>.</p>
+            <div id="info-box">
+                <h1 id="info-title">No Posts!</h1>
+                <p id="info-text">Please create some posts <a href="{% url "add-blog" %}" target='_blank'>here</a>.</p>
+            </div>
             {% endif %}
         </div>
     </section>

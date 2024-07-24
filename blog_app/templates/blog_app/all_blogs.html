@@ -5,25 +5,18 @@
 {% block css_files %}
 <link rel="stylesheet" href="{% static "blog_app/all_blogs.css" %}">
 <link rel="stylesheet" href="{% static "blog_app/includes/header.css" %}">
+<link rel="stylesheet" href="{% static "blog_app/includes/post.css" %}">
 {% endblock css_files %}
 
 {% block page_content %}
     {% include "blog_app/includes/header.html" with header_title="The <span class='bg-black'>Blog</span> Company" %}
-    <div class="m-top-100"></div>
+    <div class="m-top-95"></div>
     <main>
         {% if all_posts|length != 0%}
             <section id="posts">
                 <div class="post">
-                    {% for item in all_posts %}
-                        <div class="post-item">
-                            <div class="post-image">
-                                <img src="{{item.image.url}}" alt="">
-                            </div>
-                            <div class="post-data">
-                                <h2><a href="{% url "blog-detail" item.post_id %}">{{item.title}}</a></h2>
-                                <p>{{item.excerpt}}</p>
-                            </div>
-                        </div>
+                    {% for items in all_posts %}
+                        {% include "blog_app/includes/post.html" with item=items %}
                     {% endfor %}
                 </div>
             </section>

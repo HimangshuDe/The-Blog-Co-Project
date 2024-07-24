@@ -5,7 +5,6 @@ html, body{
     padding: 0;
     box-sizing: border-box;
     background: url(../../../static/images/blog-account.jpg) no-repeat center center/cover;
-    object-fit: fill;
     overflow-x: hidden;
     height: 100vh;
 }
@@ -18,16 +17,8 @@ html, body{
     padding: 3px;
 }
 
-.m-top-100{
-    margin-top: 100px;
-}
-
-/* Main tag */
-main{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
+.m-top-95{
+    margin-top: 95px;
 }
 
 /* Section Post */
@@ -40,62 +31,12 @@ section#posts{
 
 /* Post class */
 .post{
-    padding: 15px;
-    width: 60%;
-}
-
-/* Post Item class */
-.post-item{
-    background: #ffffffab;
-    margin: 10px;
+    width: 70vw;
+    overflow: scroll;
+    height: 86vh;
     display: flex;
-    border-radius: 10px;
-}
-
-.post-item .post-image{
-    height: 144px;
-    width: 220px;
-    margin: 10px;
-}
-
-.post-image img{
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-}
-
-.post-data{
-    margin: 10px;
-}
-
-.post-data p{
-    margin-bottom: 5px;
-}
-
-.post-data h2 a{
-    text-decoration: none;
-    color: #1d3557;
-}
-
-.post-data h2 a:hover{
-    text-decoration: underline;
-    color: #1d3557;
-}
-
-.post-data .post-tags{
-    display: flex;
-    justify-content: space-around;
-    width: 200px;
-}
-.post-data .post-tags p{
-    border: 1px solid #808888;
-    padding: 5px;
-    border-radius: 10px;
-    font-size: 12px;
-}
-
-.post-item:hover .post-image img{
-    box-shadow: 0 10px 10px #000000a8;
+    flex-direction: column;
+    align-items: center;
 }
 
 
